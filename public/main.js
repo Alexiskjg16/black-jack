@@ -4,7 +4,7 @@ const PlayerShuffledDeck = () => {
   // for each card in deck
   for (let i = 0; i < deck.length; i++) {
     //create a random number between 0-i
-    const j=Math.floor(Math.random() * i)
+    const j = Math.floor(Math.random() * i)
     //swap cards at position i and the random number
     let temp = deck[i]
     deck[i] = deck[j]
@@ -13,47 +13,63 @@ const PlayerShuffledDeck = () => {
 }
 
 const displayCard = () => {
+
   const poppedCardObject = deck.pop()
   const displayCard = poppedCardObject["Rank"] + " of " + poppedCardObject["Suit"]
   console.log(displayCard)
-  computershand.push(displayCard)
+  computershand.push(poppedCardObject)
   console.log(computershand)
+
   const poppedCardObject2 = deck.pop()
   const displayCardTwo = poppedCardObject2["Rank"] + " of " + poppedCardObject2["Suit"]
   console.log(displayCardTwo)
-  computershand.push(displayCardTwo)
+  computershand.push(poppedCardObject2)
   console.log(computershand)
+
   const poppedCardObject3 = deck.pop()
   const displayCardThree = poppedCardObject3["Rank"] + " of " + poppedCardObject3["Suit"]
   console.log(displayCardThree)
-  hand.push(displayCardThree)
+  hand.push(poppedCardObject3)
   console.log(hand)
-  document.querySelector('.LetitDisplay').textContent=displayCardThree
+  document.querySelector('.LetitDisplay').textContent = displayCardThree
+
   const poppedCardObject4 = deck.pop()
   const displayCardFour = poppedCardObject4["Rank"] + " of " + poppedCardObject4["Suit"]
   console.log(displayCardFour)
-  hand.push(displayCardFour)
+  hand.push(poppedCardObject4)
   console.log(hand)
-  document.querySelector('.FirstDisplayCard').textContent=displayCardFour
-  
+  document.querySelector('.FirstDisplayCard').textContent = displayCardFour
+  let sum = 0
+  for (i = 0; i < hand.length; i++) {
+    console.log(hand[i])
+    sum += hand[i].value
+  }
+  console.log("sum:" + sum)
+  // this is where we want to sum
+  // let sum = 0
+  // for (...) {
+  //   sum += card.value
+  // }
+  // if (sum > 21) ...
+
 }
 
 const displayExtraCard = () => {
   const poppedCardObject5 = deck.pop()
   const displayExtraCard = poppedCardObject5["Rank"] + " of " + poppedCardObject5["Suit"]
-  hand.push(displayExtraCard)
+  hand.push(poppedCardObject5)
   console.log(hand)
   console.log(displayExtraCard)
-  document.querySelector('.DisplayCardFive').textContent=displayExtraCard
+  document.querySelector('.DisplayCardFive').textContent = displayExtraCard
+  
+  let sum = 0
+  for (i = 0; i < hand.length; i++) {
+    console.log(hand[i])
+    sum += hand[i].value
+  }
+  console.log("sum:" + sum)
+  document.querySelector('.ValueofHand').textContent = sum
 }
-
-// hand.push(poppedCardObject5)
-
-  // let sum = 0
-  // for ... {
-  //   sum += card.value
-  // }
-  // if (sum > 21) ...
 
 let hand = []
 let computershand = []
@@ -62,21 +78,21 @@ let deck = []
 const createPlayerDeck = () => {
   let suitOfCard = ['Hearts', 'Spades', 'Diamonds', 'Clubs']
   let typeOfCard = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
-  let card_values = ['11', '2', '3', '4', '5', '6', '7', '8', '9', '10', '10', '10', '10']
+  let card_values = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
   for (let j = 0; j < suitOfCard.length; j++) {
     for (let i = 0; i < typeOfCard.length; i++) {
       deck.push({
-         Rank: typeOfCard[i],
-         Suit: suitOfCard[j],
-         value: card_values[i]
+        Rank: typeOfCard[i],
+        Suit: suitOfCard[j],
+        value: card_values[i]
       })
-  PlayerShuffledDeck()
 
-for (let sum = 0; sum += [i]; sum++) {
-  Math.ceil(Math.sum <= 21)
-}
-}
-}
+      // for (let sum = 0; sum += [i]; sum++) {
+      //   Math.ceil(Math.sum <= 21)
+      // }
+    }
+  }
+  PlayerShuffledDeck()
 }
 
 document.addEventListener('DOMContentLoaded', createPlayerDeck)
