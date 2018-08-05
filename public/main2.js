@@ -66,7 +66,7 @@ const playersFullHand = () => {
 
 }
 
-const computersResult = () => {
+function computersResult() {
   if (computersum < 17) {
     const poppedCardObject6 = deck.pop()
     const computersResult = poppedCardObject6["Rank"] + " of " + poppedCardObject6["Suit"]

@@ -3,7 +3,66 @@ html {
 }
 
 body {
+  display: flex;
   margin: 0;
   min-height: 100%;
   font: 16px / 1 sans-serif;
+  background-image: url('images/plainbackground.jpg');
+  flex-direction: column;
+}
+
+#HeaderoftheGame {
+  display: flex;
+  justify-content: center;
+  font-size: 45px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#shuffler {
+  display:flex;
+  justify-content: center;
+  size: 24px;
+  width: 20em;
+  height: 7em;
+  margin-left:55em;
+}
+
+#secondbutton {
+  display: flex;
+  justify-content: center;
+  width: 20em;
+  height: 7em;
+}
+
+#thirdbutton {
+  display: flex;
+  justify-content: center;
+  width:20em;
+  height: 7em;
+}
+
+#middlesection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-left: 10em;
+  margin-top: 5em;
+  font-size: 35px;
+}
+
+#trythisone{
+dispaly: flex; 
+font-size: 35px;
+}
+
+#angryfont {
+  font-size: 35px;
+}
+
+#angrydoublefont {
+  font-size: 35px;
+}
+
+#biggerfont {
+  font-size: 35px;
 }
